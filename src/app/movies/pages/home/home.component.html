@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<div class="container_Home">
+  <div class="header">
+    <div class="titleHeader">
+      <div class="title">
+        <h2>Bienvenidos.</h2>
+        <h3>
+          Millones de películas, programas de televisión y personas por
+          descubrir. Explora ahora.
+        </h3>
+      </div>
+      <div class="Search">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Buscar una película, programa de televisión, persona......"
+        />
+        <button>Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="Content">
+    <div class="Label withBackground">
+      <h2>Tendencias</h2>
+      <div class="LabelContent">
+        <div
+          *ngFor="let movie of dataHome?.results.slice(0, 8)"
+          class="containerCard"
+        >
+          <div class="card">
+            <app-card [data]="movie" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Label">
+      <h2>Lo mas Popular</h2>
+      <div class="LabelContent">
+        <div
+          *ngFor="let movie of dataHome?.results.slice(0, 8)"
+          class="containerCard"
+        >
+          <div class="card">
+            <app-card [data]="movie" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
