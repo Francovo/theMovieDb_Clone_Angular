@@ -1,0 +1,25 @@
+<div class="containerCard">
+  <div
+    class="containerCalification"
+    [ngStyle]="{
+      'background-image': 'url(' + urlBaseImage + data.poster_path + ')'
+    }"
+  >
+    <div class="calification">
+      <span
+        [ngClass]="{
+          'green-border': data.vote_average > 7,
+          'yellow-border': data.vote_average <= 7 && data.vote_average >= 4,
+          'red-border': data.vote_average < 4
+        }"
+        >{{ data.vote_average | number : "1.0-0" }}</span
+      >
+    </div>
+  </div>
+  <div class="content">
+    <div class="TitleDate">
+      <a href="">{{ data.original_title }} </a>
+      <p>{{ data.release_date }}</p>
+    </div>
+  </div>
+</div>

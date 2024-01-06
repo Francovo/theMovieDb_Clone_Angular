@@ -1,0 +1,30 @@
+<div class="container_NavBar">
+  <div class="NavBar">
+    <img
+      class="iconImage"
+      src="https://i.kym-cdn.com/photos/images/original/002/314/057/5a8.png"
+      alt="iconImage"
+    />
+    <ul class="options">
+      <li class="select">
+        <div class="titleSelect" (click)="toggleOptions('Movies')">
+          Peliculas
+        </div>
+        <ul class="optionsSelect" *ngIf="optionsVisibleMovies">
+          <li>Popular</li>
+          <li>Mejor valoradas</li>
+        </ul>
+      </li>
+      <li class="select">
+        <div class="titleSelect" (click)="toggleOptions('Tv')">Peliculas</div>
+        <ul class="optionsSelect" *ngIf="optionsVisibleTv">
+          <li>Popular</li>
+          <li>Mejor valoradas</li>
+        </ul>
+      </li>
+    </ul>
+    <button class="btnSearch">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</div>
