@@ -10,12 +10,12 @@ const routes: Routes = [
       // { path: 'home', component: Page1Component },
       // { path: 'page2', component: Page2Component },
       // { path: '', pathMatch: 'full', redirectTo: 'page1' }
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MoviesRoutingModule { }
+export class MoviesRoutingModule {}

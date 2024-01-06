@@ -8,7 +8,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { YoutubeVideoPlayerComponent } from './components/youtube-video-player/youtube-video-player.component';
 import { HomeComponent } from './pages/home/home.component';
 
-import { YouTubePlayerModule } from '@angular/youtube-player';
 import { MoviesRoutingModule } from './movies-routing.module';
 
 @NgModule({
@@ -19,11 +18,6 @@ import { MoviesRoutingModule } from './movies-routing.module';
     CardComponent,
     YoutubeVideoPlayerComponent,
   ],
-  imports: [
-    CommonModule,
-    MoviesRoutingModule,
-    MatIconModule,
-    YouTubePlayerModule,
-  ],
+  imports: [CommonModule, MoviesRoutingModule, MatIconModule],
 })
 export class MoviesModule {}
