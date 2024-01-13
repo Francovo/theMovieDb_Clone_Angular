@@ -1,0 +1,41 @@
+<div class="containerSearch">
+  <div class="containerInputSearch">
+    <button (click)="searchMulti()">
+      <mat-icon>search</mat-icon>
+    </button>
+    <input
+      type="text"
+      [placeholder]="inputSearch"
+      [(ngModel)]="inputSearch"
+      (keyup.enter)="searchMulti()"
+    />
+  </div>
+  <div class="container_Search_Results">
+    <div class="search_Panel">
+      <div class="title_Panel">Resultados de la búsqueda</div>
+      <table class="options_Panel">
+        <!-- User use memo para que si cambia y vuelve no vuelva a hacer la peticion -->
+        <tr>
+          <td><button (click)="filterMovies()">Películas</button></td>
+        </tr>
+        <tr>
+          <td><button (click)="filterTv()">Programas de televisión</button></td>
+        </tr>
+        <tr>
+          <td><button (click)="filterUsers()">Gente</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="containerCard">
+      <app-card-search
+        [dataCard]="dataSearch.results ? dataSearch.results : []"
+      ></app-card-search>
+    </div>
+  </div>
+  <footer>
+    <img
+      src="https://static.vecteezy.com/system/resources/thumbnails/002/083/369/original/thanks-for-watching-with-glitch-effect-free-video.jpg"
+      alt=""
+    />
+  </footer>
+</div>

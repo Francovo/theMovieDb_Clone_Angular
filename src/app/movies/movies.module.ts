@@ -8,7 +8,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { YoutubeVideoPlayerComponent } from './components/youtube-video-player/youtube-video-player.component';
 import { HomeComponent } from './pages/home/home.component';
 
+import { FormsModule } from '@angular/forms';
 import { MoviesRoutingModule } from './movies-routing.module';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { CardSearchComponent } from './components/card-search/card-search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { MoviesRoutingModule } from './movies-routing.module';
     ModalMoviesDetailComponent,
     CardComponent,
     YoutubeVideoPlayerComponent,
+    SearchResultsComponent,
+    CardSearchComponent,
   ],
-  imports: [CommonModule, MoviesRoutingModule, MatIconModule],
+  imports: [CommonModule, MoviesRoutingModule, MatIconModule, FormsModule],
+  exports: [NavbarComponent],
 })
 export class MoviesModule {}

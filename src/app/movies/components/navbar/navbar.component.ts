@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
   optionsVisibleMovies = false;
   optionsVisibleTv = false;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private router: Router) {}
 
   ngOnInit(): void {
     // Agrega un listener de clics al documento
@@ -41,5 +42,9 @@ export class NavbarComponent implements OnInit {
     } else {
       return;
     }
+  }
+
+  goHome() {
+    this.router.navigate(['home']);
   }
 }

@@ -11,13 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'movies',
+    path: 'home',
     loadChildren: () =>
       import('./movies/movies.module').then((m) => m.MoviesModule),
   },
   {
     path: '**',
-    redirectTo: 'movies', // O a cualquier otra ruta predeterminada
+    redirectTo: 'home', // O a cualquier otra ruta predeterminada
   },
 ];
 

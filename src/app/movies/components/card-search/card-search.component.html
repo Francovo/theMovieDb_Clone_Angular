@@ -1,0 +1,50 @@
+<div *ngFor="let result of dataCard">
+  <ng-container *ngIf="!result.known_for; else elseTemplate">
+    <div class="container_Card">
+      <img
+        [src]="
+          result.poster_path
+            ? urlBaseImage + '/' + result.poster_path
+            : 'https://icons.veryicon.com/png/o/miscellaneous/simple-linear-icon/icon-img.png'
+        "
+        alt=""
+        [class]="result.poster_path ? 'imgData' : 'imgNotFound'"
+      />
+      <div class="Details_search">
+        <div class="title">
+          <h2>{{ result.title }}</h2>
+          <span>{{ result.release_date | date : "dd MMMM, y" }}</span>
+        </div>
+        <p>{{ result.overview }}</p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="container_Card_Person">
+      <img
+        [src]="
+          result.profile_path
+            ? urlBaseImage + '/' + result.profile_path
+            : 'https://icons.veryicon.com/png/o/miscellaneous/simple-linear-icon/icon-img.png'
+        "
+        alt=""
+        [class]="result.profile_path ? 'imgData' : 'imgNotFound'"
+      />
+      <div class="Details_search_Person">
+        <div class="title">
+          <h2>{{ result.name }}</h2>
+        </div>
+        <div class="Details_Person">
+          <p>{{ result.known_for_department }}</p>
+          <p>{{ " • " }}</p>
+          <p>
+            {{
+              result.known_for[0].original_title ??
+                result.known_for[0].original_name
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
